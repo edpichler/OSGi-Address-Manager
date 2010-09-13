@@ -1,0 +1,1 @@
+Fazer um componente OSGI para gerenciamento de endereços geográficos.

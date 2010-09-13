@@ -1,0 +1,16 @@
+<projectDescription>
+  <name>address</name>
+  <comment>Unit tests. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+  <projects>
+    <project>OSGi Address Services</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.ajdt.core.ajbuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.ajdt.ui.ajnature</nature>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>
