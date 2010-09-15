@@ -32,4 +32,4 @@ public class AspectJPAEntityTest {
 		new Address().find(3); 
 		System.out.println("passou");
 	}
-}
+} 
