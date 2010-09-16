@@ -1,6 +1,5 @@
-package com.edpichler.osgi;
+package com.edpichler.osgi.address.test;
 
-import com.edpichler.osgi.test.AddressTest;
 
 import junit.framework.TestSuite;
 

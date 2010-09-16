@@ -1,4 +1,4 @@
-package com.edpichler.osgi.test;
+package com.edpichler.osgi.address.test;
 
 import org.apache.felix.ipojo.junit4osgi.OSGiTestCase;
 
