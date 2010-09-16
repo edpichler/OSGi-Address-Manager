@@ -10,7 +10,9 @@ JPA-PersistenceUnits: pesistenceUnit
 Import-Package: javax.persistence;version="1.0.0",
  org.apache.derby.jdbc;version="10.5.1000001.764942",
  org.aspectj.lang;version="1.6.8.RELEASE",
- org.eclipse.persistence.jpa;version="1.1.3.v20091002-r5404",
+ org.eclipse.persistence.jpa;version="1.1.3",
  org.osgi.framework;version="1.5.0",
  org.springframework.roo.addon.javabean,
  org.springframework.roo.addon.tostring
+Bundle-Activator: com.edpichler.osgi.address.conf.AddressServicesConfiguration
+

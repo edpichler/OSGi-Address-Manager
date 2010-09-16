@@ -21,5 +21,9 @@ public class Address {
 	
 	private int latitutde, longitude;
 	
-	private City city;	
+	private City city;
+	
+	public static void main(String[] args) {
+		new Address().find(1);
+	}
 }
