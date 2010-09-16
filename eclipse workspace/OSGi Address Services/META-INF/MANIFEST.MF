@@ -3,8 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: OSGi_Address_Services
 Bundle-SymbolicName: OSGi_Address_Services
 Bundle-Version: 1.0.0.qualifier
-Export-Package: com.edpichler.osgi.address.conf,
- com.edpichler.osgi.jpa.address
+Export-Package: com.edpichler.osgi.jpa.address,
+ com.edpichler.osgi.jpa.address.conf
 Bundle-Description: Component to manage and persist addresses.
 JPA-PersistenceUnits: pesistenceUnit
 Import-Package: javax.persistence;version="1.0.0",

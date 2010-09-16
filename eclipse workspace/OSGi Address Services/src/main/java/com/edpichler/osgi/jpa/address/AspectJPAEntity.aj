@@ -5,7 +5,8 @@ import java.util.Properties;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import com.edpichler.osgi.address.conf.AddressServicesConfiguration;
+
+import com.edpichler.osgi.jpa.address.conf.AddressServicesConfiguration;
 
 
 privileged @SuppressWarnings("unused")

@@ -1,4 +1,4 @@
-package com.edpichler.osgi.address.conf;
+package com.edpichler.osgi.jpa.address.conf;
 
 
 public class AddressServicesConfiguration  {
