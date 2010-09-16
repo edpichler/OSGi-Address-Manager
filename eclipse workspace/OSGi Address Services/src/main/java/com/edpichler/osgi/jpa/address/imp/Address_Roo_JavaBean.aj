@@ -1,17 +1,12 @@
-package com.edpichler.osgi.jpa.address;
+package com.edpichler.osgi.jpa.address.imp;
 
-import com.edpichler.osgi.jpa.address.City;
+import com.edpichler.osgi.jpa.address.imp.City;
+
+import java.lang.Integer;
+import java.lang.Long;
 import java.lang.String;
 
 privileged aspect Address_Roo_JavaBean {
-    
-    public int Address.getId() {
-        return this.id;
-    }
-    
-    public void Address.setId(int id) {
-        this.id = id;
-    }
     
     public String Address.getStreet() {
         return this.street;
@@ -59,6 +54,22 @@ privileged aspect Address_Roo_JavaBean {
     
     public void Address.setCity(City city) {
         this.city = city;
+    }
+    
+    public Long Address.getId() {
+        return this.id;
+    }
+    
+    public void Address.setId(Long id) {
+        this.id = id;
+    }
+    
+    public Integer Address.getVersion() {
+        return this.version;
+    }
+    
+    public void Address.setVersion(Integer version) {
+        this.version = version;
     }
     
 }

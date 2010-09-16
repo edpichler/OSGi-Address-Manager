@@ -1,4 +1,4 @@
-package com.edpichler.osgi.jpa.address;
+package com.edpichler.osgi.jpa.address.imp;
 
 import java.lang.String;
 
