@@ -23,6 +23,7 @@ public class AddressCrudTest extends OSGiTestCase {
 	
 	//TODO PASSAR PARAMETRO PARA RECRIAR O BANCO TODA VEZ QUE INICIA TESTES.
 	//TODO CRIAR BANCO COM SUFIXO TEMP PARA NAO TER RISCO DE APAGAR EM PRODUÇÃO
+	//TODO CODE COVERAGE AT 80%
 	
 	public  void testFindAll(){		
 		Address address = new Address();

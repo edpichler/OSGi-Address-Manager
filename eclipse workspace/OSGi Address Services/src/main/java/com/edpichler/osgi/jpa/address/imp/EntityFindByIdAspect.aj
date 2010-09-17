@@ -22,17 +22,17 @@ privileged aspect EntityFindByIdAspect {
 	}
 
 	@SuppressWarnings("unchecked")
-	public Country Country.find(long id) {
+	public static Country Country.find(long id) {
 		return (Country) findById(Country.class, id);
 	}
 
 	@SuppressWarnings("unchecked")
-	public City City.find(long id) {
+	public static City City.find(long id) {
 		return (City) findById(City.class, id);
 	}
 
 	@SuppressWarnings("unchecked")
-	public CountryState CountryState.find(long id) {
+	public static CountryState CountryState.find(long id) {
 		return (CountryState) findById(CountryState.class, id);
 	}
 

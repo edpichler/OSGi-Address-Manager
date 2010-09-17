@@ -20,9 +20,9 @@ privileged aspect EntityFindAllAspect {
 
 	@SuppressWarnings("rawtypes")
 	public static List<?> findAllObjects(Class o) {
-		EntityManager entityManager = createEntityManager();		
-		Query query = entityManager.createQuery(
-				"select o from " + o.getSimpleName() + " o");
+		EntityManager entityManager = createEntityManager();
+		Query query = entityManager.createQuery("select o from "
+				+ o.getSimpleName() + " o");
 		List resultList = query.getResultList();
 		entityManager.close();
 		entityManager = null;
@@ -30,11 +30,11 @@ privileged aspect EntityFindAllAspect {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public static List<?> findEntriesObjects(Class o, int firstResult, int maxResult) {
-		return createEntityManager()
-				.createQuery("select o from " + o.getSimpleName() + " o")
-				.setFirstResult(firstResult).setMaxResults(maxResult)
-				.getResultList();
+	public static List<?> findEntriesObjects(Class o, int firstResult,
+			int maxResult) {
+		return createEntityManager().createQuery(
+				"select o from " + o.getSimpleName() + " o").setFirstResult(
+				firstResult).setMaxResults(maxResult).getResultList();
 	}
 
 	// findall
@@ -60,23 +60,29 @@ privileged aspect EntityFindAllAspect {
 
 	// findentries
 	@SuppressWarnings("unchecked")
-	public List<Address> Address.findEntries(int firstResult, int maxResult) {
+	public static List<Address> Address.findEntries(int firstResult,
+			int maxResult) {
 		return (List<Address>) findEntriesObjects(Address.class, firstResult,
 				maxResult);
 	}
+
 	@SuppressWarnings("unchecked")
-	public List<Country> Country.findEntries(int firstResult, int maxResult) {
+	public static List<Country> Country.findEntries(int firstResult,
+			int maxResult) {
 		return (List<Country>) findEntriesObjects(Country.class, firstResult,
 				maxResult);
 	}
+
 	@SuppressWarnings("unchecked")
-	public List<City> City.findEntries(int firstResult, int maxResult) {
+	public static List<City> City.findEntries(int firstResult, int maxResult) {
 		return (List<City>) findEntriesObjects(City.class, firstResult,
 				maxResult);
 	}
+
 	@SuppressWarnings("unchecked")
-	public List<CountryState> CountryState.findEntries(int firstResult, int maxResult) {
-		return (List<CountryState>) findEntriesObjects(CountryState.class, firstResult,
-				maxResult);
+	public static List<CountryState> CountryState.findEntries(int firstResult,
+			int maxResult) {
+		return (List<CountryState>) findEntriesObjects(CountryState.class,
+				firstResult, maxResult);
 	}
 }

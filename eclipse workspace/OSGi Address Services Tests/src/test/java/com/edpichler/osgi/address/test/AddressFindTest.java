@@ -16,4 +16,14 @@ public class AddressFindTest extends OSGiTestCase {
 		assertEquals("Tye are not equals", address.getLatitutde(), Address
 				.find(address.getId()).getLatitutde());
 	}
+	
+	public void testFindEntries() {
+		for (int i = 0; i < 10; i++) {
+			Address address = new Address();
+			address.setLatitutde(i);
+			address.persist();	
+		}
+		List<Address> entries = Address.findEntries(2, 3); // 2nd till 5th
+		assertEquals("Wrong quantity!", entries.size(), 3);
+	}
 }
