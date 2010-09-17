@@ -26,4 +26,7 @@ public class AddressFindTest extends OSGiTestCase {
 		List<Address> entries = Address.findEntries(2, 3); // 2nd till 5th
 		assertEquals("Wrong quantity!", entries.size(), 3);
 	}
+	//TODO create findBy parameters.
+	
+	//TODO create interfaces
 }
