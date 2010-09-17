@@ -19,7 +19,8 @@ privileged aspect EntityFindAllAspect {
 
 	@SuppressWarnings("rawtypes")
 	public static List<?> findAllObjects(Class o) {
-		return getEntityManager().createQuery(
+		EntityManager entityManager = getEntityManager();		
+		return entityManager.createQuery(
 				"select o from " + o.getSimpleName() + " o").getResultList();
 	}
 

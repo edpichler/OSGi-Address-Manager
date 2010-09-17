@@ -3,13 +3,20 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 	<persistence-unit name="pesistenceUnit">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		
+		<class>com.edpichler.osgi.jpa.address.imp.Address</class>
+		<class>com.edpichler.osgi.jpa.address.imp.Country</class>
+		<class>com.edpichler.osgi.jpa.address.imp.CountryState</class>
+		<class>com.edpichler.osgi.jpa.address.imp.City</class>				
 		<!--
+		
 			<class>com.edpichler.osgi.jpa.address.City</class>
 			<class>com.edpichler.osgi.jpa.address.Address</class>
 			<class>com.edpichler.osgi.jpa.address.CountryState</class>
 			<class>com.edpichler.osgi.jpa.address.Country</class>
+			<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		-->
-		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		
 		<properties>
 			<!-- Embedded Derby Login -->
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />

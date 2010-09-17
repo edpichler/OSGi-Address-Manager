@@ -6,7 +6,7 @@ import com.edpichler.osgi.jpa.address.imp.Address;
 
 public class AddressTest extends OSGiTestCase {
 	
-	public  void testFind(){				
+	public  void testFindAll(){				
 		new Address().findAll();
-	}	
+	}
 }
