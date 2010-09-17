@@ -9,7 +9,7 @@ public class Suite extends junit.framework.TestSuite {
 	 */
 	public static junit.framework.Test suite() {
 		TestSuite suite = new TestSuite("Address Services Test Suite");
-		suite.addTestSuite(AddressTest.class);
+		suite.addTestSuite(AddressCrudTest.class);
 		return suite;
 	}
 }

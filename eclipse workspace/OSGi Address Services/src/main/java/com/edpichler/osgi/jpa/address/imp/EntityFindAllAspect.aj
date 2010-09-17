@@ -3,6 +3,7 @@ package com.edpichler.osgi.jpa.address.imp;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import com.edpichler.osgi.jpa.address.conf.EntityManagerProvider;
 
@@ -12,21 +13,25 @@ import com.edpichler.osgi.jpa.address.conf.EntityManagerProvider;
 privileged aspect EntityFindAllAspect {
 
 	// aux
-	private static final EntityManager getEntityManager() {
+	private static final EntityManager createEntityManager() {
 		EntityManager ent = EntityManagerProvider.createEntityManager();
 		return ent;
 	}
 
 	@SuppressWarnings("rawtypes")
 	public static List<?> findAllObjects(Class o) {
-		EntityManager entityManager = getEntityManager();		
-		return entityManager.createQuery(
-				"select o from " + o.getSimpleName() + " o").getResultList();
+		EntityManager entityManager = createEntityManager();		
+		Query query = entityManager.createQuery(
+				"select o from " + o.getSimpleName() + " o");
+		List resultList = query.getResultList();
+		entityManager.close();
+		entityManager = null;
+		return resultList;
 	}
 
 	@SuppressWarnings("rawtypes")
 	public static List<?> findEntriesObjects(Class o, int firstResult, int maxResult) {
-		return getEntityManager()
+		return createEntityManager()
 				.createQuery("select o from " + o.getSimpleName() + " o")
 				.setFirstResult(firstResult).setMaxResults(maxResult)
 				.getResultList();

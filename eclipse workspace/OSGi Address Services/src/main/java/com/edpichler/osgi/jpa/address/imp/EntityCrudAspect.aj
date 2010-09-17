@@ -15,112 +15,144 @@ privileged aspect EntityCrudAspect {
 	}
 
 	// persist
-	public void Address.persistEntity() {
-		getEntityManager().persist(this);
-	}
-	
 	public void Address.persist() {
-		getEntityManager().persist(this);
+		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
+		ent.persist(this);
+		ent.getTransaction().commit();
+		ent.close();
 	}
 
 	public void City.persist() {
-		getEntityManager().persist(this);
+		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
+		ent.persist(this);
+		ent.getTransaction().commit();
+		ent.close();
 	}
 
 	public void Country.persist() {
-		getEntityManager().persist(this);
+		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
+		ent.persist(this);
+		ent.getTransaction().commit();
+		ent.close();
 	}
 
 	public void CountryState.persist() {
-		getEntityManager().persist(this);
+		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
+		ent.persist(this);
+		ent.getTransaction().commit();
+		ent.close();
 	}
 
 	// remove
 	public void Address.remove() {
 		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
 		if (ent.contains(this)) {
 			ent.remove(this);
 		} else {
 			Address attached = ent.find(Address.class, this.id);
 			ent.remove(attached);
 		}
+		ent.getTransaction().commit();
+		ent.close();
 	}
 
 	public void Country.remove() {
 		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
 		if (ent.contains(this)) {
 			ent.remove(this);
 		} else {
 			Country attached = ent.find(Country.class, this.id);
 			ent.remove(attached);
 		}
+		ent.getTransaction().commit();
+		ent.close();
 	}
 
 	public void CountryState.remove() {
 		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
 		if (ent.contains(this)) {
 			ent.remove(this);
 		} else {
 			CountryState attached = ent.find(CountryState.class, this.id);
 			ent.remove(attached);
 		}
+		ent.getTransaction().commit();
+		ent.close();
 	}
 
 	public void City.remove() {
 		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
 		if (ent.contains(this)) {
 			ent.remove(this);
 		} else {
 			City attached = ent.find(City.class, this.id);
 			ent.remove(attached);
 		}
+		ent.getTransaction().commit();
+		ent.close();
 	}
 
-	// flush
-	public void Address.flush() {
-		getEntityManager().flush();
-	}
-
-	public void Country.flush() {
-		getEntityManager().flush();
-	}
-
-	public void CountryState.flush() {
-		getEntityManager().flush();
-	}
-
-	public void City.flush() {
-		getEntityManager().flush();
-	}
+	// // flush
+	// public void Address.flush() {
+	// getEntityManager().flush();
+	// }
+	//
+	// public void Country.flush() {
+	// getEntityManager().flush();
+	// }
+	//
+	// public void CountryState.flush() {
+	// getEntityManager().flush();
+	// }
+	//
+	// public void City.flush() {
+	// getEntityManager().flush();
+	// }
 
 	// merge
 	public void Address.merge() {
 		// JPA Entity Manager
 		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
 		ent.merge(this);
-		ent.flush();
+		ent.getTransaction().commit();
+		//ent.flush();
+		ent.close();
 	}
 
 	public void Country.merge() {
 		// JPA Entity Manager
 		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
 		ent.merge(this);
-		ent.flush();
+		ent.getTransaction().commit();
+		ent.close();
 	}
 
 	public void City.merge() {
 		// JPA Entity Manager
 		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
 		ent.merge(this);
-		ent.flush();
+		ent.getTransaction().commit();
+		ent.close();
 	}
 
 	public void CountryState.merge() {
 		// JPA Entity Manager
 		EntityManager ent = getEntityManager();
+		ent.getTransaction().begin();
 		ent.merge(this);
-		ent.flush();
+		ent.getTransaction().commit();		
+		ent.close();
 	}
-	
-	
+
 }

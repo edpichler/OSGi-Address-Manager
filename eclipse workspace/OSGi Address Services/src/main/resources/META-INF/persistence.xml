@@ -31,7 +31,7 @@
 			<property name="eclipselink.jdbc.batch-writing" value="JDBC" />
 
 			<!-- Database Schema Creation -->
-			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			<property name="eclipselink.ddl-generation" value="create-tables" />
 			<property name="eclipselink.ddl-generation.output-mode"
 				value="database" />
 
