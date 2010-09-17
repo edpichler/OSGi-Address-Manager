@@ -15,7 +15,7 @@ Import-Package: javax.persistence;version="1.0.0",
  org.springframework.roo.addon.javabean,
  org.springframework.roo.addon.entity,
  org.springframework.roo.addon.tostring
-Test-Suite: com.edpichler.osgi.address.Suite
+Test-Suite: com.edpichler.osgi.address.test.Suite
 
 
 

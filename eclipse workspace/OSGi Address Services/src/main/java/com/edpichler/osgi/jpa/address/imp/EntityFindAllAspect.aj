@@ -13,7 +13,7 @@ privileged aspect EntityFindAllAspect {
 
 	// aux
 	private static final EntityManager getEntityManager() {
-		EntityManager ent = EntityManagerProvider.getEntityManager();
+		EntityManager ent = EntityManagerProvider.createEntityManager();
 		return ent;
 	}
 

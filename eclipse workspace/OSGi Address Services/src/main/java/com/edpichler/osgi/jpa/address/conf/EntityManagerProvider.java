@@ -1,18 +1,30 @@
 package com.edpichler.osgi.jpa.address.conf;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
+/**
+ * Class to create EntityManagers
+ * */
 public class EntityManagerProvider {
-	private static EntityManager ent = null;
+
+	private static EntityManagerFactory fac = null;
 
 	private EntityManagerProvider() {
 
 	}
 
-	public static EntityManager getEntityManager() {
-		if(ent  == null){
-			return null;
+	/**@return A new EntytyManager instance.
+	 * @see EntityManager
+	 * */
+	public static EntityManager createEntityManager() {
+		
+		if (fac == null) {
+			fac = Persistence.createEntityManagerFactory("pesistenceUnit");
 		}
-		return null;
+		EntityManager ent = null;
+		ent = fac.createEntityManager();
+		return ent;
 	}
 }

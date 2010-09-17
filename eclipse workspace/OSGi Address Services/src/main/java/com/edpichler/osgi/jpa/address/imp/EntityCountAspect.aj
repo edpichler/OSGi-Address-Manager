@@ -10,7 +10,7 @@ import com.edpichler.osgi.jpa.address.conf.EntityManagerProvider;
 privileged aspect EntityCountAspect {
 
 	private static final EntityManager getEntityManager() {
-		EntityManager ent = EntityManagerProvider.getEntityManager();
+		EntityManager ent = EntityManagerProvider.createEntityManager();
 		return ent;
 	}
 
