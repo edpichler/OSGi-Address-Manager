@@ -21,7 +21,8 @@ public class AddressCrudTest extends OSGiTestCase {
 		assertTrue("It was not persisted",  + lista.size() > 0);
 	}
 	
-	//TODO PASSAR PARAMETRO PARA RECRIAR O BANCO TODA VEZ QUE INICIA TESTES
+	//TODO PASSAR PARAMETRO PARA RECRIAR O BANCO TODA VEZ QUE INICIA TESTES.
+	//TODO CRIAR BANCO COM SUFIXO TEMP PARA NAO TER RISCO DE APAGAR EM PRODUÇÃO
 	
 	public  void testFindAll(){		
 		Address address = new Address();
