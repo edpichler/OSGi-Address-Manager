@@ -62,5 +62,7 @@ public interface IAddress {
 	public Integer getVersion();
 
 	public void setVersion(Integer version);
+	
+	public IAddress find(long id);	
 
 }

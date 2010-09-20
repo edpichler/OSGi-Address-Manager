@@ -2,6 +2,7 @@ package com.edpichler.osgi.jpa.address.imp;
 
 import javax.persistence.EntityManager;
 
+import com.edpichler.osgi.jpa.address.IAddress;
 import com.edpichler.osgi.jpa.address.conf.EntityManagerProvider;
 
 /**
@@ -140,8 +141,8 @@ privileged aspect EntityCrudAspect {
 
 	//FIND BY ID
 	@SuppressWarnings("unchecked")
-	public static Address Address.find(long id) {
-		return (Address) findById(Address.class, id);
+	public IAddress Address.find(long id) {
+		return (IAddress) findById(Address.class, id);
 	}
 
 	@SuppressWarnings("unchecked")
