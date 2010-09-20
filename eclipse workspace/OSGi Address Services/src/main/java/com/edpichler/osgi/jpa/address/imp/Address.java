@@ -10,12 +10,12 @@ import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.tostring.RooToString;
 
 import com.edpichler.osgi.jpa.address.IAddress;
-import com.edpichler.osgi.jpa.address.JpaEntity;
+import com.edpichler.osgi.jpa.address.IJPAEntity;
 
 @RooJavaBean
 @RooToString
 @Entity
-public class Address implements JpaEntity, IAddress{
+public class Address implements IJPAEntity, IAddress{
 
 	private String street, complement;
 

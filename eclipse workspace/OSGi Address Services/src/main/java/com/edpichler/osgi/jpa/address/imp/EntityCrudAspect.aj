@@ -9,7 +9,7 @@ import com.edpichler.osgi.jpa.address.conf.EntityManagerProvider;
  * */
 privileged aspect EntityCrudAspect {
 
-	private static final EntityManager getEntityManager() {
+	private static final EntityManager getEntityManager()  {
 		EntityManager ent = EntityManagerProvider.createEntityManager();
 		return ent;
 	}
@@ -100,23 +100,6 @@ privileged aspect EntityCrudAspect {
 		ent.close();
 	}
 
-	// // flush
-	// public void Address.flush() {
-	// getEntityManager().flush();
-	// }
-	//
-	// public void Country.flush() {
-	// getEntityManager().flush();
-	// }
-	//
-	// public void CountryState.flush() {
-	// getEntityManager().flush();
-	// }
-	//
-	// public void City.flush() {
-	// getEntityManager().flush();
-	// }
-
 	// merge
 	public void Address.merge() {
 		// JPA Entity Manager
@@ -155,4 +138,29 @@ privileged aspect EntityCrudAspect {
 		ent.close();
 	}
 
+	//FIND BY ID
+	@SuppressWarnings("unchecked")
+	public static Address Address.find(long id) {
+		return (Address) findById(Address.class, id);
+	}
+
+	@SuppressWarnings("unchecked")
+	public static Country Country.find(long id) {
+		return (Country) findById(Country.class, id);
+	}
+
+	@SuppressWarnings("unchecked")
+	public static City City.find(long id) {
+		return (City) findById(City.class, id);
+	}
+
+	@SuppressWarnings("unchecked")
+	public static CountryState CountryState.find(long id) {
+		return (CountryState) findById(CountryState.class, id);
+	}
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static Object findById(Class o, long id) {
+		return getEntityManager().find(o, id);
+	}
 }
