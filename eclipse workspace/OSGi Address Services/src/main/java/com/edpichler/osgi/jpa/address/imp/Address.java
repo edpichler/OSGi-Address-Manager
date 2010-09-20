@@ -7,13 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.Version;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.test.RooIntegrationTest;
 import org.springframework.roo.addon.tostring.RooToString;
+
+import com.edpichler.osgi.jpa.address.IAddress;
+import com.edpichler.osgi.jpa.address.JpaEntity;
 
 @RooJavaBean
 @RooToString
 @Entity
-public class Address {
+public class Address implements JpaEntity, IAddress{
 
 	private String street, complement;
 
