@@ -9,7 +9,7 @@ privileged aspect Address_Roo_ToString {
         sb.append("Street: ").append(getStreet()).append(", ");
         sb.append("Complement: ").append(getComplement()).append(", ");
         sb.append("PostalCode: ").append(getPostalCode()).append(", ");
-        sb.append("Latitutde: ").append(getLatitutde()).append(", ");
+        sb.append("Latitutde: ").append(getLatitude()).append(", ");
         sb.append("Longitude: ").append(getLongitude()).append(", ");
         sb.append("City: ").append(getCity()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");

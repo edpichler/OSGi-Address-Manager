@@ -24,7 +24,7 @@ public class Address implements JpaEntity, IAddress{
 	 * */
 	private String postalCode;
 
-	private int latitutde, longitude;
+	private int latitude, longitude;
 
 	private City city;
 

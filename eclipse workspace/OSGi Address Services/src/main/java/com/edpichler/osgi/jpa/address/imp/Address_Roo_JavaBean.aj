@@ -31,12 +31,12 @@ privileged aspect Address_Roo_JavaBean {
         this.postalCode = postalCode;
     }
     
-    public int Address.getLatitutde() {
-        return this.latitutde;
+    public int Address.getLatitude() {
+        return this.latitude;
     }
     
-    public void Address.setLatitutde(int latitutde) {
-        this.latitutde = latitutde;
+    public void Address.setLatitude(int latitude) {
+        this.latitude = latitude;
     }
     
     public int Address.getLongitude() {
