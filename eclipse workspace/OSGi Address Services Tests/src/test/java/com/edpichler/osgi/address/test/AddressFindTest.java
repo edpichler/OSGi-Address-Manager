@@ -10,17 +10,17 @@ public class AddressFindTest extends OSGiTestCase {
 
 	public void testFindById() {
 		Address address = new Address();
-		address.setLatitutde((int) (Math.random() * 1000));
+		address.setLatitude((int) (Math.random() * 1000));
 		address.persist();
 		assertNotNull(address.getId());
-		assertEquals("Tye are not equals", address.getLatitutde(), Address
-				.find(address.getId()).getLatitutde());
+		assertEquals("Tye are not equals", address.getLatitude(), Address
+				.find(address.getId()).getLatitude());
 	}
 	
 	public void testFindEntries() {
 		for (int i = 0; i < 10; i++) {
 			Address address = new Address();
-			address.setLatitutde(i);
+			address.setLatitude(i);
 			address.persist();	
 		}
 		List<Address> entries = Address.findEntries(2, 3); // 2nd till 5th
