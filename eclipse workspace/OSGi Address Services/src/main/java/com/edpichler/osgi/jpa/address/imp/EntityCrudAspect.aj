@@ -138,8 +138,10 @@ privileged aspect EntityCrudAspect {
 		ent.getTransaction().commit();		
 		ent.close();
 	}
-
-	//FIND BY ID
+	
+	//TODO MAKE CRUD OPERATIONS ON ADDRESS SERVICES CLASS. Or make methods static
+	
+	//FIND BY ID 
 	@SuppressWarnings("unchecked")
 	public IAddress Address.find(long id) {
 		return (IAddress) findById(Address.class, id);
