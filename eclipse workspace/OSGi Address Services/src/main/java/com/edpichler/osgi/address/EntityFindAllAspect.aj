@@ -1,10 +1,11 @@
-package com.edpichler.osgi.jpa.address.imp;
+package com.edpichler.osgi.address;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import com.edpichler.osgi.jpa.address.conf.impl.JPAUtil;
+import com.edpichler.osgi.address.jpa.AddressServicesImpl;
+import com.edpichler.osgi.address.jpa.JPAUtil;
 
 /**
  * Aspect that persists, retrieve, update and delete an object
@@ -18,7 +19,7 @@ privileged aspect EntityFindAllAspect {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public static List<?> findAllObjects(Class o) {
+	private static List<?> findAllObjects(Class o) {
 		EntityManager entityManager = createEntityManager();
 		Query query = entityManager.createQuery("select o from "
 				+ o.getSimpleName() + " o");
@@ -29,7 +30,7 @@ privileged aspect EntityFindAllAspect {
 	}
 
 	@SuppressWarnings("rawtypes")
-	public static List<?> findEntriesObjects(Class o, int firstResult,
+	private static List<?> findEntriesObjects(Class o, int firstResult,
 			int maxResult) {
 		return createEntityManager().createQuery(
 				"select o from " + o.getSimpleName() + " o").setFirstResult(
@@ -38,48 +39,46 @@ privileged aspect EntityFindAllAspect {
 
 	// findall
 	@SuppressWarnings("unchecked")
-	public List<Address> Address.findAll() {
+	public List<Address> AddressServicesImpl.findAllAddresses() {
 		return (List<Address>) findAllObjects(Address.class);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Country> Country.findAll() {
+	public List<Country> AddressServicesImpl.findAllCountries() {
 		return (List<Country>) findAllObjects(Country.class);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<City> City.findAll() {
+	public List<City> AddressServicesImpl.findAllCities() {
 		return (List<City>) findAllObjects(City.class);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<CountryState> CountryState.findAll() {
+	public List<CountryState> AddressServicesImpl.findAllCountryStates() {
 		return (List<CountryState>) findAllObjects(CountryState.class);
 	}
 
 	// findentries
 	@SuppressWarnings("unchecked")
-	public static List<Address> Address.findEntries(int firstResult,
-			int maxResult) {
+	public List<Address> AddressServicesImpl.findAddressEntries(int firstResult, int maxResult) {
 		return (List<Address>) findEntriesObjects(Address.class, firstResult,
 				maxResult);
 	}
 
 	@SuppressWarnings("unchecked")
-	public static List<Country> Country.findEntries(int firstResult,
-			int maxResult) {
+	public List<Country> AddressServicesImpl.findCountryEntries(int firstResult, int maxResult) {
 		return (List<Country>) findEntriesObjects(Country.class, firstResult,
 				maxResult);
 	}
 
 	@SuppressWarnings("unchecked")
-	public static List<City> City.findEntries(int firstResult, int maxResult) {
+	public List<City> AddressServicesImpl.findCityEntries(int firstResult, int maxResult) {
 		return (List<City>) findEntriesObjects(City.class, firstResult,
 				maxResult);
 	}
 
 	@SuppressWarnings("unchecked")
-	public static List<CountryState> CountryState.findEntries(int firstResult,
+	public List<CountryState> AddressServicesImpl.findCountryStateEntries(int firstResult,
 			int maxResult) {
 		return (List<CountryState>) findEntriesObjects(CountryState.class,
 				firstResult, maxResult);

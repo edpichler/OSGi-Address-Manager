@@ -1,6 +1,7 @@
-package com.edpichler.osgi.jpa.address.imp;
+package com.edpichler.osgi.address;
 
-import com.edpichler.osgi.jpa.address.imp.CountryState;
+import com.edpichler.osgi.address.CountryState;
+
 import java.lang.String;
 
 privileged aspect City_Roo_JavaBean {

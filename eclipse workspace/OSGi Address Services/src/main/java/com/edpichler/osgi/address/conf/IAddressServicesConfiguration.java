@@ -1,7 +1,8 @@
-package com.edpichler.osgi.jpa.address.conf;
+package com.edpichler.osgi.address.conf;
 
 import java.util.Map;
 
+/** Set the configuration */
 public interface IAddressServicesConfiguration {
 	/**
 	 * You can override any EclipseLink properties of the persistence.xml file.
@@ -18,5 +19,5 @@ public interface IAddressServicesConfiguration {
 	 * property name="eclipselink.target-database" value="Derby"
 	 * 
 	 * */
-	public void setAddressServiceConfiguration(Map prop);
+	public void setAddressServiceConfiguration(Map prop) throws IllegalStateException;
 }

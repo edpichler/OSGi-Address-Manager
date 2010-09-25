@@ -1,7 +1,8 @@
-package com.edpichler.osgi.jpa.address.imp;
+package com.edpichler.osgi.address;
 
 import javax.persistence.EntityManager;
-import com.edpichler.osgi.jpa.address.conf.impl.JPAUtil;
+import com.edpichler.osgi.address.jpa.*;
+import com.edpichler.osgi.address.jpa.JPAUtil;
 
 /**
  * Aspect that persists, retrieve, update and delete an object
@@ -13,23 +14,23 @@ privileged aspect EntityCountAspect {
 		return ent;
 	}
 
-	public long Address.countAddress() {
+	public long AddressServicesImpl.countAddress() {
 		return count(Address.class);
 	}
 
-	public long City.countAddress() {
+	public long AddressServicesImpl.countCity() {
 		return count(City.class);
 	}
 
-	public long Country.countAddress() {
+	public long AddressServicesImpl.countCountry() {
 		return count(Country.class);
 	}
 
-	public long CountryState.countAddress() {
+	public long AddressServicesImpl.countCountryState() {
 		return count(CountryState.class);
 	}
 
-	public static long count(Class o) {
+	private static long count(Class o) {
 		return (Long) getEntityManager().createQuery(
 				"select count(o) from " + o.getSimpleName() + " o")
 				.getSingleResult();

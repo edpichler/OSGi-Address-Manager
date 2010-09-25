@@ -1,14 +1,14 @@
-package com.edpichler.osgi.jpa.address.imp;
+package com.edpichler.osgi.address;
 
 import java.lang.String;
 
-privileged aspect City_Roo_ToString {
+privileged aspect Country_Roo_ToString {
     
-    public String City.toString() {
+    public String Country.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Id: ").append(getId()).append(", ");
         sb.append("Name: ").append(getName()).append(", ");
-        sb.append("State: ").append(getState());
+        sb.append("Sign: ").append(getSign());
         return sb.toString();
     }
     

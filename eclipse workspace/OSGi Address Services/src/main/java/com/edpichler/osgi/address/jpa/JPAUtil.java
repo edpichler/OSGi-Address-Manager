@@ -1,4 +1,4 @@
-package com.edpichler.osgi.jpa.address.conf.impl;
+package com.edpichler.osgi.address.jpa;
 
 import java.util.Map;
 
@@ -6,8 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.edpichler.osgi.jpa.address.conf.ConfigurationServiceProvider;
-import com.edpichler.osgi.jpa.address.conf.IAddressServicesConfiguration;
+import com.edpichler.osgi.address.conf.ConfigurationServiceProvider;
+import com.edpichler.osgi.address.conf.IAddressServicesConfiguration;
 
 public class JPAUtil implements IAddressServicesConfiguration {
 	private static Map properties;
@@ -30,12 +30,12 @@ public class JPAUtil implements IAddressServicesConfiguration {
 	}
 
 	@Override
-	public void setAddressServiceConfiguration(Map prop) {
+	public void setAddressServiceConfiguration(Map prop) throws IllegalStateException{
 		if (emf != null) {
 			throw new IllegalStateException(
-					"The persistent context was already" + " initialized."
+					"The persistent context was already been" + " initialized."
 							+ " You only can set the properties "
-							+ "before calling any service.");
+							+ "before calling any service or initializing the persist context.");
 		}
 		properties = prop;
 	}

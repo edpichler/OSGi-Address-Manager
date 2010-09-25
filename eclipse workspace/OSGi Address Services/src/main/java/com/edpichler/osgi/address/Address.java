@@ -1,4 +1,4 @@
-package com.edpichler.osgi.jpa.address.imp;
+package com.edpichler.osgi.address;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
