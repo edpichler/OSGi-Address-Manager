@@ -4,8 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-
-import com.edpichler.osgi.jpa.address.conf.EntityManagerProvider;
+import com.edpichler.osgi.jpa.address.conf.impl.JPAUtil;
 
 /**
  * Aspect that persists, retrieve, update and delete an object
@@ -14,7 +13,7 @@ privileged aspect EntityFindAllAspect {
 
 	// aux
 	private static final EntityManager createEntityManager() {
-		EntityManager ent = EntityManagerProvider.createEntityManager();
+		EntityManager ent = JPAUtil.createEntityManager();
 		return ent;
 	}
 

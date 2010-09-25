@@ -1,0 +1,5 @@
+eclipse workspace/.metadata/.lock
+eclipse workspace/.metadata/*
+eclipse workspace/OSGi Address Services Tests/target/*
+eclipse workspace/OSGi Address Services/bin/*
+eclipse workspace/Servers/*

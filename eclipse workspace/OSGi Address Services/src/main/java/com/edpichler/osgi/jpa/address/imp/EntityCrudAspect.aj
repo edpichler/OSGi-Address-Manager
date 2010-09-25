@@ -2,16 +2,15 @@ package com.edpichler.osgi.jpa.address.imp;
 
 import javax.persistence.EntityManager;
 
-import com.edpichler.osgi.jpa.address.IAddress;
-import com.edpichler.osgi.jpa.address.conf.EntityManagerProvider;
+import com.edpichler.osgi.jpa.address.conf.impl.JPAUtil;
 
 /**
  * Aspect that persists, retrieve, update and delete an object
  * */
 privileged aspect EntityCrudAspect {
 
-	private static final EntityManager getEntityManager()  {
-		EntityManager ent = EntityManagerProvider.createEntityManager();
+	private static final EntityManager getEntityManager() {
+		EntityManager ent = JPAUtil.createEntityManager();
 		return ent;
 	}
 
@@ -108,7 +107,7 @@ privileged aspect EntityCrudAspect {
 		ent.getTransaction().begin();
 		ent.merge(this);
 		ent.getTransaction().commit();
-		//ent.flush();
+		// ent.flush();
 		ent.close();
 	}
 
@@ -135,16 +134,17 @@ privileged aspect EntityCrudAspect {
 		EntityManager ent = getEntityManager();
 		ent.getTransaction().begin();
 		ent.merge(this);
-		ent.getTransaction().commit();		
+		ent.getTransaction().commit();
 		ent.close();
 	}
-	
-	//TODO MAKE CRUD OPERATIONS ON ADDRESS SERVICES CLASS. Or make methods static
-	
-	//FIND BY ID 
+
+	// TODO MAKE CRUD OPERATIONS ON ADDRESS SERVICES CLASS. Or make methods
+	// static
+
+	// FIND BY ID
 	@SuppressWarnings("unchecked")
-	public IAddress Address.find(long id) {
-		return (IAddress) findById(Address.class, id);
+	public Address Address.find(long id) {
+		return (Address) findById(Address.class, id);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -162,7 +162,7 @@ privileged aspect EntityCrudAspect {
 		return (CountryState) findById(CountryState.class, id);
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings( { "rawtypes", "unchecked" })
 	public static Object findById(Class o, long id) {
 		return getEntityManager().find(o, id);
 	}

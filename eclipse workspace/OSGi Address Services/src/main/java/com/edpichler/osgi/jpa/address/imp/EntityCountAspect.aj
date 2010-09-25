@@ -1,8 +1,7 @@
 package com.edpichler.osgi.jpa.address.imp;
 
 import javax.persistence.EntityManager;
-
-import com.edpichler.osgi.jpa.address.conf.EntityManagerProvider;
+import com.edpichler.osgi.jpa.address.conf.impl.JPAUtil;
 
 /**
  * Aspect that persists, retrieve, update and delete an object
@@ -10,7 +9,7 @@ import com.edpichler.osgi.jpa.address.conf.EntityManagerProvider;
 privileged aspect EntityCountAspect {
 
 	private static final EntityManager getEntityManager() {
-		EntityManager ent = EntityManagerProvider.createEntityManager();
+		EntityManager ent = JPAUtil.createEntityManager();
 		return ent;
 	}
 

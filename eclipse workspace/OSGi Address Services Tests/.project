@@ -3,7 +3,6 @@
 	<name>OSGi Address Services Tests</name>
 	<comment>Unit tests. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
 	<projects>
-		<project>OSGi Address Services</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

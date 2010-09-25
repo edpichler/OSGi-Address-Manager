@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.apache.felix.ipojo.junit4osgi.OSGiTestCase;
 
-import com.edpichler.osgi.jpa.address.IAddress;
 import com.edpichler.osgi.jpa.address.imp.Address;
 
 public class AddressCrudTest extends OSGiTestCase {
@@ -64,7 +63,7 @@ public class AddressCrudTest extends OSGiTestCase {
 		address.setStreet(novaRua);
 		address.merge();	
 		
-		IAddress adrSaved = address.find(address.getId());
+		Address adrSaved = address.find(address.getId());
 		String ruaSalva = adrSaved.getStreet();
 		
 		assertEquals("The streets are diferent!", novaRua, ruaSalva);
@@ -77,7 +76,7 @@ public class AddressCrudTest extends OSGiTestCase {
 		address.persist();
 		
 		assertNotNull(address.getId());		
-		IAddress adrSaved = address.find(address.getId());
+		Address adrSaved = address.find(address.getId());
 		assertNotNull("Can't find!", adrSaved);			
 	}
 }
