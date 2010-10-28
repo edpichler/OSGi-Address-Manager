@@ -4,10 +4,10 @@
 	<persistence-unit name="pesistenceUnit">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		
-		<class>com.edpichler.osgi.jpa.address.imp.Address</class>
-		<class>com.edpichler.osgi.jpa.address.imp.Country</class>
-		<class>com.edpichler.osgi.jpa.address.imp.CountryState</class>
-		<class>com.edpichler.osgi.jpa.address.imp.City</class>				
+		<class>com.edpichler.osgi.address.Address</class>
+		<class>com.edpichler.osgi.address.Country</class>
+		<class>com.edpichler.osgi.address.CountryState</class>
+		<class>com.edpichler.osgi.address.City</class>				
 		<!--
 		
 			<class>com.edpichler.osgi.jpa.address.City</class>
