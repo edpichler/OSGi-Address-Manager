@@ -31,5 +31,6 @@ public interface IAddressService {
 	public abstract List<Address> findAllAddresses();
 
 	public abstract List<Address> findAddressEntries(int firstResult, int maxResult);
+	public abstract List<City> findCityEntries(int firstResult, int maxResult);
 		 
 }
