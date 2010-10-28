@@ -17,7 +17,7 @@ public class AddressServicesImpl implements IAddressService {
 	public void persist(Object o) {
 		EntityManager ent = JPAUtil.createEntityManager();
 		ent.getTransaction().begin();
-		ent.persist(this);
+		ent.persist(o);
 		ent.getTransaction().commit();
 		ent.close();
 	}
@@ -28,8 +28,8 @@ public class AddressServicesImpl implements IAddressService {
 	public void remove(Address o) {
 		EntityManager ent = JPAUtil.createEntityManager();
 		ent.getTransaction().begin();
-		if (ent.contains(this)) {
-			ent.remove(this);
+		if (ent.contains(o)) {
+			ent.remove(o);
 		} else {
 			Address attached = ent.find(Address.class, o.getId());
 			ent.remove(attached);
@@ -44,8 +44,8 @@ public class AddressServicesImpl implements IAddressService {
 	public void remove(Country o) {
 		EntityManager ent = JPAUtil.createEntityManager();
 		ent.getTransaction().begin();
-		if (ent.contains(this)) {
-			ent.remove(this);
+		if (ent.contains(o)) {
+			ent.remove(o);
 		} else {
 			Country attached = ent.find(Country.class, o.getId());
 			ent.remove(attached);
@@ -60,8 +60,8 @@ public class AddressServicesImpl implements IAddressService {
 	public void remove(CountryState o) {
 		EntityManager ent = JPAUtil.createEntityManager();
 		ent.getTransaction().begin();
-		if (ent.contains(this)) {
-			ent.remove(this);
+		if (ent.contains(o)) {
+			ent.remove(o);
 		} else {
 			CountryState attached = ent.find(CountryState.class, o.getId());
 			ent.remove(attached);
@@ -76,8 +76,8 @@ public class AddressServicesImpl implements IAddressService {
 	public void remove(City o) {
 		EntityManager ent = JPAUtil.createEntityManager();
 		ent.getTransaction().begin();
-		if (ent.contains(this)) {
-			ent.remove(this);
+		if (ent.contains(o)) {
+			ent.remove(o);
 		} else {
 			City attached = ent.find(City.class, o.getId());
 			ent.remove(attached);
