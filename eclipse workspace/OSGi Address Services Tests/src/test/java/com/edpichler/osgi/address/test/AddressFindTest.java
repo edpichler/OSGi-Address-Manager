@@ -15,7 +15,7 @@ public class AddressFindTest extends OSGiTestCase {
 
 	public void testFindById() {
 		Address address = new Address();
-		address.setCity(createCity());
+		address.setCity(TestUtil.createCity());
 		address.setLatitude((int) (Math.random() * 1000));
 		IAddressService service = AddressServiceFactory.createAddressService();
 		service.persist(address);
@@ -40,35 +40,13 @@ public class AddressFindTest extends OSGiTestCase {
 		assertNotNull(country.getId());
 	}
 
-	private City createCity() {
-		City ci = new City();
-		ci.setName("Name");
-		ci.setState(createCountryState());
-		return ci;
-	}
-
-	private CountryState createCountryState() {
-		
-		CountryState co = new CountryState();
-		co.setName("country state");
-		co.setCountry(createCountry());
-		return co;
-	}
-
-	private Country createCountry() {
-		Country cou = new Country();
-		cou.setName("Brazil");
-		cou.setSign("BR");
-		return cou;
-	}
-
 	public void testFindEntries() {
 		IAddressService service = AddressServiceFactory.createAddressService();
 
 		for (int i = 0; i < 10; i++) {
 			Address address = new Address();
 			address.setLatitude(i);
-			address.setCity(createCity());
+			address.setCity(TestUtil.createCity());
 			service.persist(address);
 
 		}
