@@ -1,16 +1,16 @@
 package com.edpichler.osgi.address;
 
 import com.edpichler.osgi.address.CountryState;
-
+import java.lang.Long;
 import java.lang.String;
 
 privileged aspect City_Roo_JavaBean {
     
-    public int City.getId() {
+    public Long City.getId() {
         return this.id;
     }
     
-    public void City.setId(int id) {
+    public void City.setId(Long id) {
         this.id = id;
     }
     

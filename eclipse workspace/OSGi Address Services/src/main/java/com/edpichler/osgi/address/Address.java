@@ -1,9 +1,11 @@
 package com.edpichler.osgi.address;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -23,6 +25,7 @@ public class Address{
 
 	private int latitude, longitude;
 
+	@OneToOne(cascade=CascadeType.PERSIST)
 	private City city;
 
 	@Id

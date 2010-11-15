@@ -1,7 +1,6 @@
 package com.edpichler.osgi.address;
 
 import com.edpichler.osgi.address.City;
-
 import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
