@@ -19,7 +19,6 @@ Import-Package: javax.persistence;version="1.0.0",
  org.springframework.roo.addon.test,
  org.springframework.roo.addon.tostring
 Test-Suite: com.edpichler.osgi.address.test.Suite
-Require-Bundle: OSGi_Oracle_Database_11g_Release_2_JDBC_Driver;bundle-version="11.2.0"
 
 
 
