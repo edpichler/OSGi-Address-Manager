@@ -14,13 +14,17 @@ public class JPAUtil implements IAddressServicesConfiguration {
 	private static EntityManagerFactory emf;
 	private static final String PERSISTENCE_UNIT = "pesistenceUnit";
 
+	private static JPAUtil instance;
 	private JPAUtil() {
 
 	}
 
 	/** @return the singleton */
 	public static JPAUtil getInstance() {
-		return new JPAUtil();
+		if(instance == null){
+			instance = new JPAUtil();
+		}
+		return instance;
 	}
 
 	/**
