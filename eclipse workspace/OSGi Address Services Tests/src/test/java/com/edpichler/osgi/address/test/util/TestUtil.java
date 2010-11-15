@@ -1,4 +1,4 @@
-package com.edpichler.osgi.address.test;
+package com.edpichler.osgi.address.test.util;
 
 import com.edpichler.osgi.address.City;
 import com.edpichler.osgi.address.Country;
@@ -27,4 +27,5 @@ public class TestUtil {
 		cou.setSign("BR");
 		return cou;
 	}
+
 }

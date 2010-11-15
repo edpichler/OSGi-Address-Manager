@@ -11,6 +11,10 @@ public class Suite extends junit.framework.TestSuite {
 		TestSuite suite = new TestSuite("OSGi Address Services Test Suite");
 		suite.addTestSuite(AddressCrudTest.class);
 		suite.addTestSuite(AddressFindTest.class);
+		suite.addTestSuite(CityCrudTest.class);
+		suite.addTestSuite(CountryStateCrudTest.class);
+		suite.addTestSuite(CountryCrudTest.class);
+		suite.addTestSuite(JPAUtilTest.class);
 		return suite;
 	}
 }

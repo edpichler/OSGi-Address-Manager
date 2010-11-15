@@ -10,6 +10,7 @@ import com.edpichler.osgi.address.City;
 import com.edpichler.osgi.address.Country;
 import com.edpichler.osgi.address.CountryState;
 import com.edpichler.osgi.address.IAddressService;
+import com.edpichler.osgi.address.test.util.TestUtil;
 
 public class AddressCrudTest extends OSGiTestCase {
 

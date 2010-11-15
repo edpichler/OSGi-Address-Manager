@@ -14,6 +14,15 @@ public class JPAUtil implements IAddressServicesConfiguration {
 	private static EntityManagerFactory emf;
 	private static final String PERSISTENCE_UNIT = "pesistenceUnit";
 
+	private JPAUtil() {
+
+	}
+
+	/** @return the singleton */
+	public static JPAUtil getInstance() {
+		return new JPAUtil();
+	}
+
 	/**
 	 * Create an EntityManager.
 	 * 
@@ -29,11 +38,12 @@ public class JPAUtil implements IAddressServicesConfiguration {
 		return em;
 	}
 
-	@Override
-	public void setAddressServiceConfiguration(Map prop) throws IllegalStateException{
+	public void setAddressServiceConfiguration(Map prop)
+			throws IllegalStateException {
 		if (emf != null) {
 			throw new IllegalStateException(
-					"The persistent context was already been" + " initialized."
+					"The persistent context was already been"
+							+ " initialized."
 							+ " You only can set the properties "
 							+ "before calling any service or initializing the persist context.");
 		}
