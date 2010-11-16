@@ -18,14 +18,14 @@ public class ConfigurationServiceProvider {
 	 */
 	@SuppressWarnings("unchecked")
 	public static Map createOracleConfiguration(String user, String password,
-			String host, String SID) {
+			String host, String SID, int port) {
 
-		String jdbcUrl = "jdbc:oracle:thin:" + host + ":1521:" + SID;
+		String jdbcUrl = "jdbc:oracle:thin:" + host + ":" + port + ":" + SID;
 		return createConfiguration(user, password, jdbcUrl,
 				"oracle.jdbc.OracleDriver", "Oracle");
 	}
 
-	@SuppressWarnings({ "unchecked" })
+	@SuppressWarnings( { "unchecked" })
 	private static Map createConfiguration(String user, String password,
 			String jdbcUrl, String jdbcDriver, String targetDatabase) {
 
