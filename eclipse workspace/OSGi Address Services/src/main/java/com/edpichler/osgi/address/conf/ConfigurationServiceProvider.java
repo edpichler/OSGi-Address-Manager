@@ -20,7 +20,7 @@ public class ConfigurationServiceProvider {
 	public static Map createOracleConfiguration(String user, String password,
 			String host, String SID, int port) {
 
-		String jdbcUrl = "jdbc:oracle:thin:" + host + ":" + port + ":" + SID;
+		String jdbcUrl = "jdbc:oracle:thin:@" + host + ":" + port + ":" + SID;
 		return createConfiguration(user, password, jdbcUrl,
 				"oracle.jdbc.OracleDriver", "Oracle");
 	}
