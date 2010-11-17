@@ -14,19 +14,19 @@ privileged aspect EntityCountAspect {
 		return ent;
 	}
 
-	public long AddressServicesImpl.countAddress() {
+	public long IAddressService.countAddress() {
 		return count(Address.class);
 	}
 
-	public long AddressServicesImpl.countCity() {
+	public long IAddressService.countCity() {
 		return count(City.class);
 	}
 
-	public long AddressServicesImpl.countCountry() {
+	public long IAddressService.countCountry() {
 		return count(Country.class);
 	}
 
-	public long AddressServicesImpl.countCountryState() {
+	public long IAddressService.countCountryState() {
 		return count(CountryState.class);
 	}
 

@@ -1,13 +1,11 @@
 package com.edpichler.osgi.address.test.suites;
 
-import java.util.Map;
-
 import junit.framework.TestSuite;
 
-import com.edpichler.osgi.address.conf.ConfigurationServiceProvider;
 import com.edpichler.osgi.address.test.AddressCrudTest;
 import com.edpichler.osgi.address.test.AddressFindTest;
 import com.edpichler.osgi.address.test.CityCrudTest;
+import com.edpichler.osgi.address.test.CountTests;
 import com.edpichler.osgi.address.test.CountryCrudTest;
 import com.edpichler.osgi.address.test.CountryStateCrudTest;
 import com.edpichler.osgi.address.test.JPAUtilTest;
@@ -29,6 +27,7 @@ public class ApacheDerbySuite extends junit.framework.TestSuite {
 		suite.addTestSuite(CountryStateCrudTest.class);
 		suite.addTestSuite(CountryCrudTest.class);
 		suite.addTestSuite(JPAUtilTest.class);
+		suite.addTestSuite(CountTests.class);		
 		return suite;
 	}
 	

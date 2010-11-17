@@ -67,4 +67,5 @@ public interface IAddressService {
 
 	public List<City> findCityEntries(int firstResult, int maxResult);
 
+	
 }
