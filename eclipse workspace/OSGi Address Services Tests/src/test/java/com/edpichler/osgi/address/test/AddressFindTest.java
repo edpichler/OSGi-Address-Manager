@@ -1,6 +1,7 @@
 package com.edpichler.osgi.address.test;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.felix.ipojo.junit4osgi.OSGiTestCase;
 
@@ -10,10 +11,22 @@ import com.edpichler.osgi.address.City;
 import com.edpichler.osgi.address.Country;
 import com.edpichler.osgi.address.CountryState;
 import com.edpichler.osgi.address.IAddressService;
+import com.edpichler.osgi.address.conf.ConfigurationServiceProvider;
 import com.edpichler.osgi.address.test.util.TestUtil;
 
 public class AddressFindTest extends OSGiTestCase {
 
+//	public static void main(String[] args) {		
+//		Map conf = ConfigurationServiceProvider.createOracleConfiguration(
+//				"user", "password", "192.168.0.163", "xe", 1521);
+//		
+//		ConfigurationServiceProvider.getAddressServicesConfiguration()
+//				.setAddressServiceConfiguration(conf);
+//	}
+	
+	
+	//TODO Obrigar DERBY CONFIGURATION OU ORACLE CONFIGURATION.
+	
 	public void testFindById() {
 		Address address = new Address();
 		address.setCity(TestUtil.createCity());
