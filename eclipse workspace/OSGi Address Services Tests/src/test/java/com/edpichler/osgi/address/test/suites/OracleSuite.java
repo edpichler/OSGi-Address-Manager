@@ -17,6 +17,7 @@ public class OracleSuite extends junit.framework.TestSuite {
 	/**
 	 * The skeleton of a JUnit test suite
 	 */
+	@SuppressWarnings("unchecked")
 	public static junit.framework.Test suite() {
 
 		// Same tests, but here with oracle
