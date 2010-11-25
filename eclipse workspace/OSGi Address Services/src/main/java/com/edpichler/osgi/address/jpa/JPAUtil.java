@@ -34,7 +34,7 @@ public class JPAUtil implements IAddressServicesConfiguration {
 	 * @see ConfigurationServiceProvider
 	 */
 	public static EntityManager createEntityManager() {
-		if (emf == null) {
+		if (emf == null || !emf.isOpen()) {
 			if (properties == null) {
 				throw new IllegalStateException("First, you need to "
 						+ "configure the persistence provider. See the "
@@ -57,7 +57,7 @@ public class JPAUtil implements IAddressServicesConfiguration {
 							+ " initialized."
 							+ " You only can set the properties "
 							+ "before calling any service or initializing the persist context.");
-		}
+		} 
 		properties = prop;
 	}
 
