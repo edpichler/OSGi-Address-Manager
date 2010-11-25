@@ -27,7 +27,7 @@ public class CustomSuite extends junit.framework.TestSuite {
 //				.setAddressServiceConfiguration(conf);	
 		
 		Map conf = ConfigurationServiceProvider.createDerbyConfiguration("any",
-				"any", "AddTest");
+				"any", "MyDerbyDatabaseName");
 		ConfigurationServiceProvider.getAddressServicesConfiguration()
 				.setAddressServiceConfiguration(conf);
 
