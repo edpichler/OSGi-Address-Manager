@@ -5,6 +5,7 @@ package com.edpichler.osgi.address.test;
 
 import com.edpichler.osgi.address.AddressServiceFactory;
 import com.edpichler.osgi.address.IAddressService;
+import com.edpichler.osgi.address.jpa.JPAUtil;
 
 import junit.framework.TestCase;
 

@@ -15,13 +15,14 @@ public class JPAUtil implements IAddressServicesConfiguration {
 	private static final String PERSISTENCE_UNIT = "pesistenceUnit";
 
 	private static JPAUtil instance;
+
 	private JPAUtil() {
 
 	}
 
 	/** @return the singleton */
 	public static JPAUtil getInstance() {
-		if(instance == null){
+		if (instance == null) {
 			instance = new JPAUtil();
 		}
 		return instance;
@@ -33,7 +34,13 @@ public class JPAUtil implements IAddressServicesConfiguration {
 	 * @see ConfigurationServiceProvider
 	 */
 	public static EntityManager createEntityManager() {
-		if (emf == null) {
+		if (emf == null || !emf.isOpen()) {
+			if (properties == null) {
+				throw new IllegalStateException("First, you need to "
+						+ "configure the persistence provider. See the "
+						+ ConfigurationServiceProvider.class.getSimpleName()
+						+ " class.");
+			}
 			emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT,
 					properties);
 		}
@@ -50,7 +57,7 @@ public class JPAUtil implements IAddressServicesConfiguration {
 							+ " initialized."
 							+ " You only can set the properties "
 							+ "before calling any service or initializing the persist context.");
-		}
+		} 
 		properties = prop;
 	}
 

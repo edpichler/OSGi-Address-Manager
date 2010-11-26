@@ -25,6 +25,19 @@ public class ConfigurationServiceProvider {
 				"oracle.jdbc.OracleDriver", "Oracle");
 	}
 
+	/**
+	 * @return a {@link Map} formated for Oracle databases
+	 */
+	@SuppressWarnings("unchecked")
+	public static Map createDerbyConfiguration(String user, String password,
+			String dataBaseName) {
+
+		String jdbcUrl = "jdbc:derby:" + dataBaseName + ";create=true";
+
+		return createConfiguration(user, password, jdbcUrl,
+				"org.apache.derby.jdbc.EmbeddedDriver", "Derby");
+	}
+
 	@SuppressWarnings( { "unchecked" })
 	private static Map createConfiguration(String user, String password,
 			String jdbcUrl, String jdbcDriver, String targetDatabase) {
@@ -37,4 +50,5 @@ public class ConfigurationServiceProvider {
 		map.put("eclipselink.target-database", targetDatabase);
 		return map;
 	}
+
 }

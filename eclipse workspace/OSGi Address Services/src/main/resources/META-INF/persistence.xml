@@ -12,9 +12,9 @@
 		<properties>
 			<!-- Embedded Derby Login -->
 			<!-- This is a example. Integrated with your software, you must setup the correct database parameters. -->
-			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:derby:address;create=true" />
-			<property name="eclipselink.target-database" value="Derby" />
+<!--			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />-->
+<!--			<property name="javax.persistence.jdbc.url" value="jdbc:derby:address;create=true" />-->
+<!--			<property name="eclipselink.target-database" value="Derby" />-->
 
 			<!-- don't need userid/password in embedded Derby -->
 			<property name="eclipselink.jdbc.read-connections.min"
