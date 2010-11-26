@@ -1,14 +1,10 @@
 package com.edpichler.osgi.address.test;
 
-import java.util.List;
-
 import org.apache.felix.ipojo.junit4osgi.OSGiTestCase;
 
 import com.edpichler.osgi.address.Address;
 import com.edpichler.osgi.address.AddressServiceFactory;
 import com.edpichler.osgi.address.City;
-import com.edpichler.osgi.address.Country;
-import com.edpichler.osgi.address.CountryState;
 import com.edpichler.osgi.address.IAddressService;
 import com.edpichler.osgi.address.test.util.TestUtil;
 

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: OSGi_Address_Services
 Bundle-SymbolicName: OSGi_Address_Services
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.9.0.0
 Export-Package: com.edpichler.osgi.address,
  com.edpichler.osgi.address.conf
 Bundle-Description: Component to manage and persist addresses.
@@ -20,6 +20,7 @@ Import-Package: javax.persistence;version="1.0.0",
  org.springframework.roo.addon.tostring
 Test-Suite: com.edpichler.osgi.address.test.suites.OracleSuite,
  com.edpichler.osgi.address.test.suites.ApacheDerbySuite
+Bundle-Vendor: edpichler.com
 
 
 
