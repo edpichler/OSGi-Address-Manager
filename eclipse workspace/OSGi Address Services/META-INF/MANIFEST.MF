@@ -18,8 +18,7 @@ Import-Package: javax.persistence;version="1.0.0",
  org.springframework.roo.addon.javabean,
  org.springframework.roo.addon.test,
  org.springframework.roo.addon.tostring
-Test-Suite: com.edpichler.osgi.address.test.suites.OracleSuite,
- com.edpichler.osgi.address.test.suites.ApacheDerbySuite
+Test-Suite: com.edpichler.osgi.address.test.suites.CustomSuite
 Bundle-Vendor: edpichler.com
 
 
